@@ -20,9 +20,8 @@
             <li>
                 <strong>METHOD1 (HTTP):</strong> Right Click -> Inspect -> Network, go to the video you want, select the XHR row named "master.m3u8",
                 and go to Headers -> General -> Request URL (something like
-                "https://pmvhavencloud.s3.eu-west-par.io.cloud.ovh.net/videos/[uploader-name]-[video-name]-[...].mp4/master.m3u8"). If that video is 1080p, you can access the master through that URL, or replace "master" by any resolution available (you can manually
-                type, or change the resolution in site and it will appear XHR rows named "1080p.m3u8", "720p.m3u8", etc.).
-                It also works if you remove "/master.m3u8". Copy the video-id and acess the URL https://pmvhaven.com/api/videos/[video-id]/download.
+                "https://pmvhavencloud.s3.eu-west-par.io.cloud.ovh.net/videos/[uploader-name]-[video-name]-[...].mp4/master.m3u8"). You can also replace "master" by any resolution available(you can manually
+                type, or change the resolution in site and it will appear XHR rows named "1080p.m3u8", "720p.m3u8", etc.). It also works if you remove "/master.m3u8".
             </li>
             -> Example (URL="https://pmvhaven.com/video/are-u-ready_6a016576c65462c71cac5097"): the Request URL is "https://pmvhavencloud.s3.eu-west-par.io.cloud.ovh.net/videos/wezzam_-_are_u_ready_1778476406313_1mtlg09u.mp4/master.m3u8",
             so we the URLs are (besides the aforementioned one) "https://pmvhavencloud.s3.eu-west-par.io.cloud.ovh.net/videos/wezzam_-_are_u_ready_1778476406313_1mtlg09u.mp4/1080p.m3u8",
