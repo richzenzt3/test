@@ -15,17 +15,62 @@
     SOME METHODS IS NOT WORKING LET ME KNOW SO I CAN UPDATE.
   </p>
   <ul>
-    <li><a href="https://pmvhaven.com" target="_blank"><strong>PMVHaven (allows downloads with account only):</strong></a> Go to the video you want to download, Right Click -> View Page Source ->
-    Control + F (search for terms like "contentURL" and ".mp4"). What you'll find is something similar to 
-    <strong>"https://pmvhavencloud.s3.eu-west-par.io.cloud.ovh.net/videos/[uploader-name]-[video-name].mp4/master.m3u8"</strong> (remove "/master.m3u8") or
-    something similar to <strong>"videos\u002F[uploader-name]-[video-name].mp4"</strong> (add at the beginning the missing
-    "https://pmvhavencloud.s3.eu-west-par.io.cloud.ovh.net" and replace every "\u002F" by "/"). The URL you'll get after doing this is something like
-    <strong>"https://pmvhavencloud.s3.eu-west-par.io.cloud.ovh.net/videos/[uploader-name]-[video-name].mp4"</strong>.</li>
-    
-    <li><a href="https://faptap.net" target="_blank"><strong>FapTap (doesn't allow downloads):</strong></a> Go to the video you want to download, Right Click -> View Page Source ->
-        Control + F (search for terms like "content" and "vz"). What you'll find is something similtar to <strong>"https://vz-.../thumbnail.jpg"</strong> (replace "thumbnail.jpg" with
-        "[resolution]/video.m3u8" where [resolution] is one of the resolutions available for the specific video). So, if a certain video's best resolution available is 1080p,
-        you'd need the URL <strong>"https://vz-.../1080p/video.m3u8"</strong></li>
+    <li><a href="https://pmvhaven.com" target="_blank"><strong>PMVHaven (allows downloads with account only)</strong></a>
+        <ul>
+            <li>
+                <strong>METHOD1 (HTTP):</strong> Right Click -> Inspect -> Network, open the video you want to watch, select the XHR row named "master.m3u8",
+                and go to Headers -> General -> Request URL (something like
+                "https://pmvhavencloud.s3.eu-west-par.io.cloud.ovh.net/videos/[uploader-name]-[video-name]-[...].mp4/master.m3u8"). If that video is 1080p, you can access the master through that URL, or replace "master" by any resolution available like "1080p", "720p", "480p", "360p" (you can manually
+                type, or change the resolution in site and it will appear XHR rows named "1080p.m3u8", "720p.m3u8", etc.).
+                It also works if you remove "/master.m3u8".<strong>https://pmvhaven.com/video/[video-name]_[video-id]</strong>.
+                Copy the video-id and acess the URL <strong>https://pmvhaven.com/api/videos/[video-id]/download</strong>.
+            </li>
+            -> Example (URL="https://pmvhaven.com/video/are-u-ready_6a016576c65462c71cac5097"): the Request URL is "https://pmvhavencloud.s3.eu-west-par.io.cloud.ovh.net/videos/wezzam_-_are_u_ready_1778476406313_1mtlg09u.mp4/master.m3u8",
+            so we the URLs are (besides the aforementioned one) "https://pmvhavencloud.s3.eu-west-par.io.cloud.ovh.net/videos/wezzam_-_are_u_ready_1778476406313_1mtlg09u.mp4/1080p.m3u8",
+            "https://pmvhavencloud.s3.eu-west-par.io.cloud.ovh.net/videos/wezzam_-_are_u_ready_1778476406313_1mtlg09u.mp4/720p.m3u8", "https://pmvhavencloud.s3.eu-west-par.io.cloud.ovh.net/videos/wezzam_-_are_u_ready_1778476406313_1mtlg09u.mp4/480p.m3u8",
+            "https://pmvhavencloud.s3.eu-west-par.io.cloud.ovh.net/videos/wezzam_-_are_u_ready_1778476406313_1mtlg09u.mp4/360p.m3u8" and "https://pmvhavencloud.s3.eu-west-par.io.cloud.ovh.net/videos/wezzam_-_are_u_ready_1778476406313_1mtlg09u.mp4".
+            
+            <li>
+                <strong>METHOD2 (HTML):</strong> Go to the video you want to download, Right Click -> View Page Source -> Control + F (search for terms like "contentURL" and ".mp4"). What you'll find is something like
+                "https://pmvhavencloud.s3.eu-west-par.io.cloud.ovh.net/videos/[uploader-name]-[video-name]-[...].mp4/master.m3u8" or something like
+                "videos\u002F[uploader-name]-[video-name]-[...].mp4" (add at the beginning the missing "https://pmvhavencloud.s3.eu-west-par.io.cloud.ovh.net" and replace every "\u002F" by "/").
+            </li>
+            -> Example (URL="https://pmvhaven.com/video/are-u-ready_6a016576c65462c71cac5097"): no example needed as URLs are the same as last example.
+
+            <li>
+                <strong>METHOD3 (unlocking the link without account):</strong> Copy the URL of the video you want to download (it should be something like https://pmvhaven.com/video/[video-name]_[video-id]).
+                Copy the video-id and acess the URL <strong>https://pmvhaven.com/api/videos/[video-id]/download</strong>.
+            </li>
+            -> Example (URL="https://pmvhaven.com/video/are-u-ready_6a016576c65462c71cac5097"): video-id is "6a016576c65462c71cac5097", we get the URL "https://pmvhaven.com/api/videos/6a016576c65462c71cac5097/download"
+        </ul>
+    </li>
+
+    <li>
+        <a href="https://faptap.net" target="_blank"><strong>FapTap (doesn't allow downloads)</strong></a>
+        <ul>
+            <li>
+                <strong>METHOD1 (HTTP):</strong> Right Click -> Inspect -> Network, open the video you want to watch, select the XHR row named "master.m3u8",
+                and go to Headers -> General -> Request URL (something like "https://vz-3d77bc0a-a87.b-cdn.net/.../[resolution]/video.m3u8", where resolution is the best for the video).
+                We can replace "[resolution]" with any other resolution available (or just change the video and it will appear another XHR also named "video.m3u8"). We can also
+                replace "[resolution]/video.m3u8" with "master.m3u8".
+                (where resolution is one of the available resolutions, for example "1080p", "720p", etc.)
+            </li>
+            -> Example (URL="https://faptap.net/v/2100317066639708161", only works with this method): the URLs are "https://vz-3d77bc0a-a87.b-cdn.net/b88452bd-6178-42b4-90c4-bd56775546e3/1080p/video.m3u8" (first one to appear),
+            "https://vz-3d77bc0a-a87.b-cdn.net/b88452bd-6178-42b4-90c4-bd56775546e3/720p/video.m3u8", "https://vz-3d77bc0a-a87.b-cdn.net/b88452bd-6178-42b4-90c4-bd56775546e3/480p/video.m3u8",
+            "https://vz-3d77bc0a-a87.b-cdn.net/b88452bd-6178-42b4-90c4-bd56775546e3/360p/video.m3u8", "https://vz-3d77bc0a-a87.b-cdn.net/b88452bd-6178-42b4-90c4-bd56775546e3/240p/video.m3u8" and
+            "https://vz-3d77bc0a-a87.b-cdn.net/b88452bd-6178-42b4-90c4-bd56775546e3/master.m3u8"
+            <li>
+                <strong>METHOD2 (HTML):</strong> Go to the video you want to download, Right Click -> View Page Source -> Control + F (search for terms like "content" and "vz").
+                What you'll find is something similtar to <strong>"https://vz-3d77bc0a-a87.b-cdn.net/.../thumbnail.jpg"</strong>. Now we need to replace "thumbnail.jpg" with "master.m3u8" or with "[resolution]/master.m3u8" (where resolution is any resolution available,
+                like "1080p", "720p", etc.)
+            </li>
+            -> Example (URL=)
+        </ul>
+    </li>
+
+    <li>
+        <a href="https://x.com" target="_blank"><strong>X (you need to pay to download)</strong></a>
+    </li>
   </ul>
 </body>
 </html>
