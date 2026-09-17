@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Downloading From Sites</title>
+</head>
+<body>
+  <h1>Downloading From Sites</h1>
+  <p>
+    In different sites you'll come across diferent formats. Some of them you can download directly with the browser (like ".mp4"), and some you can't
+    (like ".m3u8"); you'll have to test each case to see if you're able to download. In the cases you can't download directly, you can use tools
+    like yt-dlp (you can search to see how you can install them). The focus here will be how to get the URL of the video you want to download. Nedless
+    to say that you don't need to do this in case a specific site don't block downloads. THIS TUTORIAL WILL BE UPDATED WHEN A SITE CHANGES, IF
+    SOME METHODS IS NOT WORKING LET ME KNOW SO I CAN UPDATE.
+  </p>
+  <ul>
+    <li><a href="https://pmvhaven.com" target="_blank"><strong>PMVHaven (allows downloads with account only):</strong></a> Go to the video you want to download, Right Click -> View Page Source ->
+    Control + F (search for terms like "contentURL" and ".mp4"). What you'll find is something similar to 
+    <strong>"https://pmvhavencloud.s3.eu-west-par.io.cloud.ovh.net/videos/[uploader-name]-[video-name].mp4/master.m3u8"</strong> (remove "/master.m3u8") or
+    something similar to <strong>"videos\u002F[uploader-name]-[video-name].mp4"</strong> (add at the beginning the missing
+    "https://pmvhavencloud.s3.eu-west-par.io.cloud.ovh.net" and replace every "\u002F" by "/"). The URL you'll get after doing this is something like
+    <strong>"https://pmvhavencloud.s3.eu-west-par.io.cloud.ovh.net/videos/[uploader-name]-[video-name].mp4"</strong>.</li>
+    
+    <li><a href="https://faptap.net" target="_blank"><strong>FapTap (doesn't allow downloads):</strong></a> Go to the video you want to download, Right Click -> View Page Source ->
+        Control + F (search for terms like "content" and "vz"). What you'll find is something similtar to <strong>"https://vz-.../thumbnail.jpg"</strong> (replace "thumbnail.jpg" with
+        "[resolution]/video.m3u8" where [resolution] is one of the resolutions available for the specific video). So, if a certain video's best resolution available is 1080p,
+        you'd need the URL <strong>"https://vz-.../1080p/video.m3u8"</strong></li>
+  </ul>
+</body>
+</html>
