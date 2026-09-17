@@ -20,7 +20,7 @@
             <li>
                 <strong>METHOD1 (HTTP):</strong> Right Click -> Inspect -> Network, open the video you want to watch, select the XHR row named "master.m3u8",
                 and go to Headers -> General -> Request URL (something like
-                "https://pmvhavencloud.s3.eu-west-par.io.cloud.ovh.net/videos/[uploader-name]-[video-name]-[...].mp4/master.m3u8"). If that video is 1080p, you can access the master through that URL, or replace "master" by any resolution available like "1080p", "720p", "480p", "360p" (you can manually
+                "https://pmvhavencloud.s3.eu-west-par.io.cloud.ovh.net/videos/[uploader-name]-[video-name]-[...].mp4/master.m3u8"). If that video is 1080p, you can access the master through that URL, or replace "master" by any resolution available (you can manually
                 type, or change the resolution in site and it will appear XHR rows named "1080p.m3u8", "720p.m3u8", etc.).
                 It also works if you remove "/master.m3u8".<strong>https://pmvhaven.com/video/[video-name]_[video-id]</strong>.
                 Copy the video-id and acess the URL <strong>https://pmvhaven.com/api/videos/[video-id]/download</strong>.
@@ -49,7 +49,7 @@
         <a href="https://faptap.net" target="_blank"><strong>FapTap (doesn't allow downloads)</strong></a>
         <ul>
             <li>
-                <strong>METHOD1 (HTTP):</strong> Right Click -> Inspect -> Network, open the video you want to watch, select the XHR row named "master.m3u8",
+                <strong>METHOD1 (HTTP, doesn't work with every video):</strong> Right Click -> Inspect -> Network, open the video you want to watch, select the XHR row named "master.m3u8",
                 and go to Headers -> General -> Request URL (something like "https://vz-3d77bc0a-a87.b-cdn.net/.../[resolution]/video.m3u8", where resolution is the best for the video).
                 We can replace "[resolution]" with any other resolution available (or just change the video and it will appear another XHR also named "video.m3u8"). We can also
                 replace "[resolution]/video.m3u8" with "master.m3u8".
@@ -60,16 +60,18 @@
             "https://vz-3d77bc0a-a87.b-cdn.net/b88452bd-6178-42b4-90c4-bd56775546e3/360p/video.m3u8", "https://vz-3d77bc0a-a87.b-cdn.net/b88452bd-6178-42b4-90c4-bd56775546e3/240p/video.m3u8" and
             "https://vz-3d77bc0a-a87.b-cdn.net/b88452bd-6178-42b4-90c4-bd56775546e3/master.m3u8"
             <li>
-                <strong>METHOD2 (HTML):</strong> Go to the video you want to download, Right Click -> View Page Source -> Control + F (search for terms like "content" and "vz").
-                What you'll find is something similtar to <strong>"https://vz-3d77bc0a-a87.b-cdn.net/.../thumbnail.jpg"</strong>. Now we need to replace "thumbnail.jpg" with "master.m3u8" or with "[resolution]/master.m3u8" (where resolution is any resolution available,
-                like "1080p", "720p", etc.)
+                <strong>METHOD2 (HTML, doesn't work with every video):</strong> Go to the video you want to download, Right Click -> View Page Source -> Control + F (search for terms like "content" and "vz").
+                What you'll find is something similtar to <strong>"https://vz-3d77bc0a-a87.b-cdn.net/.../thumbnail.jpg"</strong>. Now we need to replace "thumbnail.jpg" with "master.m3u8" or with "[resolution]/master.m3u8".
             </li>
-            -> Example (URL=)
+            -> Example (...)
         </ul>
     </li>
 
     <li>
-        <a href="https://x.com" target="_blank"><strong>X (you need to pay to download)</strong></a>
+        <a href="https://x.com" target="_blank"><strong>X (you need to pay to download):</strong></a> soon..
+    </li>
+    <li>
+        <a href="https://pornhub.com/" target="_blank"><strong>Pornhub (doesn't allow downloads):</strong></a> soon..
     </li>
   </ul>
 </body>
