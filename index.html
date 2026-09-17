@@ -22,8 +22,7 @@
                 and go to Headers -> General -> Request URL (something like
                 "https://pmvhavencloud.s3.eu-west-par.io.cloud.ovh.net/videos/[uploader-name]-[video-name]-[...].mp4/master.m3u8"). If that video is 1080p, you can access the master through that URL, or replace "master" by any resolution available (you can manually
                 type, or change the resolution in site and it will appear XHR rows named "1080p.m3u8", "720p.m3u8", etc.).
-                It also works if you remove "/master.m3u8".<strong>https://pmvhaven.com/video/[video-name]_[video-id]</strong>.
-                Copy the video-id and acess the URL <strong>https://pmvhaven.com/api/videos/[video-id]/download</strong>.
+                It also works if you remove "/master.m3u8". Copy the video-id and acess the URL https://pmvhaven.com/api/videos/[video-id]/download.
             </li>
             -> Example (URL="https://pmvhaven.com/video/are-u-ready_6a016576c65462c71cac5097"): the Request URL is "https://pmvhavencloud.s3.eu-west-par.io.cloud.ovh.net/videos/wezzam_-_are_u_ready_1778476406313_1mtlg09u.mp4/master.m3u8",
             so we the URLs are (besides the aforementioned one) "https://pmvhavencloud.s3.eu-west-par.io.cloud.ovh.net/videos/wezzam_-_are_u_ready_1778476406313_1mtlg09u.mp4/1080p.m3u8",
@@ -39,7 +38,7 @@
 
             <li>
                 <strong>METHOD3 (unlocking the link without account):</strong> Copy the URL of the video you want to download (it should be something like https://pmvhaven.com/video/[video-name]_[video-id]).
-                Copy the video-id and acess the URL <strong>https://pmvhaven.com/api/videos/[video-id]/download</strong>.
+                Copy the video-id and acess the URL https://pmvhaven.com/api/videos/[video-id]/download.
             </li>
             -> Example (URL="https://pmvhaven.com/video/are-u-ready_6a016576c65462c71cac5097"): video-id is "6a016576c65462c71cac5097", we get the URL "https://pmvhaven.com/api/videos/6a016576c65462c71cac5097/download"
         </ul>
@@ -61,7 +60,7 @@
             "https://vz-3d77bc0a-a87.b-cdn.net/b88452bd-6178-42b4-90c4-bd56775546e3/master.m3u8"
             <li>
                 <strong>METHOD2 (HTML, doesn't work with every video):</strong> Go to the video you want to download, Right Click -> View Page Source -> Control + F (search for terms like "content" and "vz").
-                What you'll find is something similtar to <strong>"https://vz-3d77bc0a-a87.b-cdn.net/.../thumbnail.jpg"</strong>. Now we need to replace "thumbnail.jpg" with "master.m3u8" or with "[resolution]/master.m3u8".
+                What you'll find is something similtar to "https://vz-3d77bc0a-a87.b-cdn.net/.../thumbnail.jpg". Now we need to replace "thumbnail.jpg" with "master.m3u8" or with "[resolution]/master.m3u8".
             </li>
             -> Example (...)
         </ul>
